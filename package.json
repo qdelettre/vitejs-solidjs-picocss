@@ -1,0 +1,21 @@
+{
+  "name": "vite-ts-solidjs",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.55.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.2",
+    "vite-plugin-solid": "^2.3.10"
+  },
+  "dependencies": {
+    "@picocss/pico": "^1.5.6",
+    "solid-js": "^1.6.1"
+  }
+}
