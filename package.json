@@ -1,21 +1,51 @@
 {
-  "name": "vite-ts-solidjs",
-  "version": "0.0.0",
-  "description": "",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "sass": "^1.58.0",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.1",
-    "vite-plugin-solid": "^2.5.0"
-  },
-  "dependencies": {
-    "@picocss/pico": "^1.5.7",
-    "solid-js": "^1.6.10"
-  }
+    "name": "vite-ts-solidjs",
+    "version": "0.0.0",
+    "description": "",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview",
+        "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+        "lint": "prettier --check . --ignore-path .gitignore && eslint .",
+        "format": "prettier --ignore-path .gitignore --write .",
+        "format-check": "prettier -- --list-different",
+        "validate": "npm-run-all --parallel type-check lint build",
+        "prepare": "husky install"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.50.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "eslint": "^8.33.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.1.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.8.3",
+        "sass": "^1.58.0",
+        "typescript": "^4.9.5",
+        "vite": "^4.1.1",
+        "vite-plugin-solid": "^2.5.0"
+    },
+    "dependencies": {
+        "@picocss/pico": "^1.5.7",
+        "solid-js": "^1.6.10"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "CI=1 npm-run-all --parallel type-check && lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.+(js|ts|tsx)": [
+            "npm run lint"
+        ],
+        "*.+(js|json|ts|tsx)": [
+            "npm run format"
+        ]
+    }
 }
