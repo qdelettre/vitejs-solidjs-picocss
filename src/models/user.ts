@@ -7,23 +7,23 @@ export interface IUser {
     phone: string;
     website: string;
     company: Company;
-  }
-  
-  interface Address {
+}
+
+interface Address {
     street: string;
     suite: string;
     city: string;
     zipcode: string;
     geo: Geo;
-  }
-  
-  interface Geo {
+}
+
+interface Geo {
     lat: string;
     lng: string;
-  }
-  
-  interface Company {
+}
+
+interface Company {
     name: string;
     catchPhrase: string;
     bs: string;
-  }
+}
