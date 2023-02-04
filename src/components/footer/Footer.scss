@@ -1,0 +1,9 @@
+footer {
+    --spacing: 0rem;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+span.heart {
+    color: var(--del-color);
+}

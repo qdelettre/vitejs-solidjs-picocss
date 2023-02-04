@@ -1,1 +1,25 @@
 @import '@picocss/pico/scss/pico.scss';
+
+:root {
+    --spacing: 0.75rem;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    > div {
+        margin-bottom: 0 default;
+        height: 100%;
+        display: contents;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+}
